@@ -1,9 +1,11 @@
+package pl.sda.j133.hibernate.fakturownia.database;
+
 import jakarta.persistence.TypedQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import pl.sda.hibernate.HibernateUtil;
-import pl.sda.hibernate.model.Mechanik;
-import pl.sda.hibernate.model.Pojazd;
+import pl.sda.j133.hibernate.fakturownia.database.HibernateUtil;
+import pl.sda.j133.hibernate.fakturownia.model.Faktura;
+import pl.sda.j133.hibernate.fakturownia.model.Firma;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +48,6 @@ public class DataAccessObject <T>{
     public Optional<T> find(Class<T> tClass, Long id){
         try(Session session = HibernateUtil.INSTANCE.getSessionFactory().openSession()){
 
-            Pojazd pojazd = session.get(Pojazd.class, id);
             T encja = session.get(tClass, id);
 
         return Optional.ofNullable(encja);

@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://localhost:3306/warsztat?severTimezone=Europe/Warsaw&amp;createDatabaseIfNotExist=true</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/fakturownia?severTimezone=Europe/Warsaw&amp;createDatabaseIfNotExist=true</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
@@ -14,8 +14,12 @@
         <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
 
         <!--Definicja modeli-->
-        <mapping class="pl.sda.hibernate.model.Pojazd"/>
-        <mapping class="pl.sda.hibernate.model.Mechanik"/>
-        <mapping class="pl.sda.hibernate.model.SerwisPojazdu"/>
+        <mapping class="pl.sda.j133.hibernate.fakturownia.model.Faktura"/>
+        <mapping class="pl.sda.j133.hibernate.fakturownia.model.Firma"/>
+
+        <mapping class="pl.sda.j133.hibernate.fakturownia.model.Platnosc"/>
+        <mapping class="pl.sda.j133.hibernate.fakturownia.model.Kontrahent"/>
+
+
     </session-factory>
 </hibernate-configuration>
